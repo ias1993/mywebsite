@@ -1,11 +1,36 @@
 import type { Metadata, Viewport } from 'next';
-import { Bricolage_Grotesque, IBM_Plex_Sans, JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import { SITE_URL, profile, seo } from '@/data/profile';
 import './globals.css';
 
-const display = Bricolage_Grotesque({ subsets: ['latin'], weight: ['500', '700', '800'], variable: '--font-display', display: 'swap' });
-const body = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-body', display: 'swap' });
-const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-mono', display: 'swap' });
+// Fonts are self-hosted (latin subset, from @fontsource) so builds never depend on reaching Google Fonts.
+const display = localFont({
+  src: [
+    { path: './fonts/bricolage-grotesque-latin-500-normal.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/bricolage-grotesque-latin-700-normal.woff2', weight: '700', style: 'normal' },
+    { path: './fonts/bricolage-grotesque-latin-800-normal.woff2', weight: '800', style: 'normal' },
+  ],
+  variable: '--font-display',
+  display: 'swap',
+});
+const body = localFont({
+  src: [
+    { path: './fonts/ibm-plex-sans-latin-400-normal.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/ibm-plex-sans-latin-500-normal.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/ibm-plex-sans-latin-600-normal.woff2', weight: '600', style: 'normal' },
+  ],
+  variable: '--font-body',
+  display: 'swap',
+});
+const mono = localFont({
+  src: [
+    { path: './fonts/jetbrains-mono-latin-400-normal.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/jetbrains-mono-latin-500-normal.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/jetbrains-mono-latin-600-normal.woff2', weight: '600', style: 'normal' },
+  ],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
