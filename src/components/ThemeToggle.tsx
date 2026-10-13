@@ -4,17 +4,13 @@ import { useEffect, useState } from 'react';
 
 const STORAGE_KEY = 'imran-theme';
 
-function systemDark() {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
 export function ThemeToggle() {
   // null until mounted, so server and client render the same markup.
   const [dark, setDark] = useState<boolean | null>(null);
 
   useEffect(() => {
     const t = document.documentElement.getAttribute('data-theme');
-    setDark(t ? t === 'dark' : systemDark());
+    setDark(t === 'dark'); // light is the default; dark only when chosen
   }, []);
 
   const toggle = () => {

@@ -2,12 +2,12 @@
    Imran Ahmed Siddiqui · Portfolio
    Layout: one column of sections on a cool paper ground; the hero pairs the
    name with a live test-run console (the single focal object).
-   Every colour is a token. Light values on :root, dark values in the two
-   dark blocks (system preference + explicit toggle).
+   Every colour is a token. Light values on :root (the default); dark values
+   apply only when the visitor picks dark with the toggle.
    ========================================================================= */
 
 :root {
-  --bg: #f3f5f3;
+  --bg: #fafafa;
   --surface: #ffffff;
   --sunk: #e9edea;
   --ink: #111a17;
@@ -38,27 +38,6 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --bg: #0d1211;
-    --surface: #141b19;
-    --sunk: #1a2320;
-    --ink: #e7eeea;
-    --muted: #97a49f;
-    --line: #27322e;
-    --accent: #8fa3ff;
-    --accent-ink: #0d1211;
-    --accent-soft: rgba(143, 163, 255, 0.12);
-    --pass: #4cc38a;
-    --pass-soft: rgba(76, 195, 138, 0.13);
-    --fail: #f08068;
-    --hl: rgba(255, 196, 0, 0.28);
-    --term-bg: #090e0c;
-    --term-line: #1e2925;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 36px -14px rgba(0, 0, 0, 0.6);
-    color-scheme: dark;
-  }
-}
 :root[data-theme='dark'] {
   --bg: #0d1211;
   --surface: #141b19;

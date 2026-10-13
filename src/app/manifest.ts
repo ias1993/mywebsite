@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: `Portfolio of ${profile.name}, ${profile.title}.`,
     start_url: '/',
     display: 'browser',
-    background_color: '#F3F5F3',
+    background_color: '#FAFAFA',
     theme_color: '#2440CF',
     icons: [
       { src: '/icon', sizes: '64x64', type: 'image/png' },
